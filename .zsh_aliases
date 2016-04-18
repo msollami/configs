@@ -1,0 +1,56 @@
+# zsh aliases
+
+alias a=alias
+
+# ssh
+a ssh='ssh -YC'
+a machines='open ~/.ssh/config'
+
+# deletion
+a rm='echo "rm is disabled, use del for safe delete (rmtrash from brew)."'
+a del="rmtrash"
+
+# browsing
+a t='tree -L 2'
+a cnt="find . -type f | wc -l"
+a sizes='du -h -d 1 .' # a sizes='du -sh *'
+a ll='ls -laH --color=auto'
+a cpwd="pwd | tr -d '\n' | pbcopy"
+
+# duplicates
+a lsdupes='fdupes -r .'
+a rmdupes='fdupes -drN .'
+
+# cd'ing
+a ..="cd .."
+a ..2="cd ../.."
+a ..3="cd ../../.."
+a ..4="cd ../../../.."
+a ..5="cd ../../../../.."
+
+# zsh related
+a zcp='zmv -C'
+a zln='zmv -L'
+a rc='open ~/.zshrc'
+a realiase='unalias -m *; source ~/.zsh_aliases'
+a reload="source ~/.zshrc"
+a aliases='open ~/.zsh_aliases'
+a funs='open ~/.zsh_functions'
+
+# Python related
+a py=python
+a ipy='ipython --pylab -i --'
+a pudb='python -m pudb.run'
+
+# CUDA
+a cudaqd="/usr/local/cuda/samples/1_Utilities/deviceQueryDrv/deviceQueryDrv"
+a cudaq="/usr/local/cuda/samples/1_Utilities/deviceQuery/deviceQuery"
+a cudatest="/usr/local/cuda/samples/1_Utilities/bandwidthTest/bandwidthTest"
+
+# TMUX
+a tl='t ls'
+a tn='t new-session -s'
+a ta='t attach-session -t'
+a tmv='t rename-session -t'
+a tk='t kill-session -t'
+a trn='t rename-session -t'
