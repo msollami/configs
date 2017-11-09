@@ -89,6 +89,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Toggle nerd tree
+let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
+map <S-Down> :m+1 <CR>
+map <S-Up> :m-2 <CR>
 

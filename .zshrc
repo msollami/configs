@@ -13,6 +13,9 @@ export PATH=/usr/local/bin:$PATH
 # for rabbitmq
 export PATH=$PATH:/usr/local/sbin/
 
+# for python
+export PYTHONDONTWRITEBYTECODE=1
+
 # themes
 themes=('3den' 'apple' 'arrow' 'aussiegeek' 'avit' 'awesomepanda' 'bira' \
 'bureau' 'candy' 'clean' 'cloud' 'crcandy' 'crunch' 'darkblood' \
@@ -30,6 +33,8 @@ export ZSH_THEME=$n
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# TODO automate install of these plugins
 plugins=(python git battery jenv)
 
+# For OSX only:
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
