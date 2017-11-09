@@ -3,8 +3,8 @@
 cwd=$PWD
 cd $HOME
 ln -s $cwd/.zshrc .zshrc
-ln -s $cwd/.zshrc_aliases .zshrc_aliases
-ln -s $cwd/.zshrc_functions .zshrc_functions
+ln -s $cwd/.zsh_aliases .zsh_aliases
+ln -s $cwd/.zsh_functions .zsh_functions
 ln -s $cwd/.vimrc .vimrc
 ln -s $cwd/.tmux.conf .tmux.conf
 ln -s $cwd/.gitignore .gitignore
