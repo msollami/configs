@@ -3,12 +3,6 @@
 # Usage: mc newDirname
 function mc () { mkdir -p "$@" && eval c "\"\$$#\""; }
 
-# Usage: tabname 'new tab name'
-function tabname {printf "\e]1;$1\a"}
-
-# Usage: winname "new window name"
-function winname {printf "\e]2;$1\a"}
-
 # Usage: grp "search term" dir
 function grp { grep -rnIi "$1" . --color; }
 
