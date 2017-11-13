@@ -2,13 +2,13 @@
 cwd=$PWD
 cd $HOME
 
-rm .zshrc
-rm .zsh_aliases
-rm .zsh_functions
-rm .vimrc
-rm .tmux.conf
-rm .gitignore
-rm $HOME/.ipython/profile_default/ipython_config.py 
+rm -f .zshrc 
+rm -f .zsh_aliases
+rm -f .zsh_functions
+rm -f .vimrc
+rm -f .tmux.conf
+rm -f .gitignore
+rm -f $HOME/.ipython/profile_default/ipython_config.py 
 
 ln -s $cwd/.zshrc .zshrc
 ln -s $cwd/.zsh_aliases .zsh_aliases
