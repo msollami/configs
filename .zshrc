@@ -1,9 +1,19 @@
-#zsh settings
+# determine os
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+# zsh settings
 autoload -U zmv zargs
 setopt Ignoreeof
 unsetopt beep
 
-#helpers
+# zsh helpers
 source ~/.zsh_functions
 source ~/.zsh_aliases
 
@@ -16,25 +26,24 @@ export PATH=$PATH:/usr/local/sbin/
 # for python
 export PYTHONDONTWRITEBYTECODE=1
 
-# themes
-themes=('3den' 'apple' 'arrow' 'aussiegeek' 'avit' 'awesomepanda' 'bira' \
+# oh-my-zsh themes that work
+themes=('apple' 'arrow' 'aussiegeek' 'avit' 'awesomepanda' 'bira' \
 'bureau' 'candy' 'clean' 'cloud' 'crcandy' 'crunch' 'darkblood' \
-'dstufft' 'dst' 'duellj' 'fino-time' 'fino' 'frisk' 'funky' 'fwalch' 'gallois' \
-'garyblessington' 'geoffgarside' 'gianu' 'gnzh'  'humza' 'intheloop' 'itchy' 'jaischeema' \
-'jbergantine' 'jispwoso' 'jtriley' 'juanghurtado' 'junkfood' 'kafeitu' 'kardan' 'kennethreitz' \
-'kiwi' 'kolo' 'kphoen' 'mgutz' 'mh' 'mikeh' 'miloshadzic' 'minimal' 'mira' \
-'mortalscumbag' 'mrtazz' 'murilasso' 'nanotech' 'nebirhos' 'nicoulaj' 'philips' 'pure' \
-'re5et' 'rgm' 'rkj' 'robbyrussell' 'sammy' 'sorin' 'sporty_256' 'steeef' 'strug' 'sunaku' \
- 'takashiyoshida' 'terminalparty' 'theunraveler' 'tjkirch' 'tonotdo' 'wedisagree' \
+'dstufft' 'duellj' 'fino-time' 'fino' 'frisk' 'funky' 'fwalch' \
+'kiwi' 'kolo' 'kphoen' 'mgutz' 'mh' 'miloshadzic' 'minimal' \
+'re5et' 'rgm' 'rkj' 'robbyrussell' 'sorin' 'sporty_256' 'steeef' 'strug' \
  'wezm' 'wuffers' 'xiong-chiamiov-plus' 'xiong-chiamiov' 'ys')
 n=$themes[$RANDOM%$#themes+1]
-echo "Enjoy $n"
+echo "Enjoy ZSH theme: $n"
 export ZSH_THEME=$n
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # TODO automate install of these plugins
-plugins=(python git battery jenv)
+plugins=(python git battery jenv rbenv)
 
 # For OSX only:
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [ "$machine" = 'Mac' ]; then
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+

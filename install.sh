@@ -8,7 +8,7 @@ rm -f .zsh_functions
 rm -f .vimrc
 rm -f .tmux.conf
 rm -f .gitignore
-rm -f $HOME/.ipython/profile_default/ipython_config.py 
+rm $HOME/.ipython/profile_default/ipython_config.py 
 
 ln -s $cwd/.zshrc .zshrc
 ln -s $cwd/.zsh_aliases .zsh_aliases
@@ -22,3 +22,4 @@ cd $HOME/.ipython/profile_default/
 ln -s $cwd/ipython_config.py ipython_config.py
 
 cd $cwd
+
